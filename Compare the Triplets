@@ -1,0 +1,35 @@
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char* readline();
+char* ltrim(char*);
+char* rtrim(char*);
+char** split_string(char*);
+
+
+
+int main(){
+    int alice[3];
+    int bob[3];
+    scanf("%d %d %d", &alice[0], &alice[1], &alice[2]);
+    scanf("%d %d %d", &bob[0], &bob[1], &bob[2]);
+
+    int score_alice = 0;
+    int score_bob = 0;
+    for (int i = 0; i < 3; i++) {
+      if (alice[i] > bob[i])
+        score_alice++;
+      if (bob[i] > alice[i])
+        score_bob++;
+    }
+    printf("%d %d\n", score_alice, score_bob);
+    return 0;
+}
